@@ -1,8 +1,9 @@
 import web3 from './web3' ;
 
-const address = "//PASTE YOUR DEPLOYED CONTRACT HERE" ;
-
-
+const address = "0x74D553C50238bF5078302bC230A5E3e8D4542Cc1" ;
+//0x9E1Da925aab9286F9eD9A763B69A0593e2011BBE
+//0xB9E19bed7D51b8Fc03D5590FD6C9b04aF9dEa9Ab - current 
+//
 const abi = [
 	{
 		"constant": false,

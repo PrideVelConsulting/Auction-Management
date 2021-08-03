@@ -15,7 +15,8 @@ class App extends Component {
     totalAuctions: '',
     AuctionId: 0,
     Bid: 0,
-    bidId: 0
+    bidId: 0,
+   
   };
 
 
@@ -49,10 +50,14 @@ makeBid = async (event) => {
   event.preventDefault()
   const accounts = await web3.eth.getAccounts();
   console.log(accounts);
+
+ 
   const Wei = web3.utils.toWei(this.state.Bid.toString(),'Wei')
   await auction.methods.bid(this.state.AuctionId, Wei ).send({
     from: accounts[0],
   })
+
+  
   console.log(this.state) 
   const auctionDetails = await auction.methods.auctionDetails(this.state.AuctionId).call();
   console.log(auctionDetails); 
@@ -93,6 +98,7 @@ payBid = async (event) => {
     from: accounts[0],
     value: web3.utils.toWei(this.state.Bid, 'Wei')
   })
+  console.log("PAYMENT TRANSFERRED")
   
 };
 
@@ -122,7 +128,6 @@ payBid = async (event) => {
           </div>
           <button>Create Auction </button>
         </form>
-
         <hr />
 
         <form onSubmit={this.makeBid}>
