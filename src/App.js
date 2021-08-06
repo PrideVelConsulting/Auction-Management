@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import web3 from './web3';
 import auction from './auction';
+import Connection from './Connection';
 
 
 
@@ -112,7 +113,9 @@ payBid = async (event) => {
         </p>
 
         <hr />
-
+        <Connection />
+        
+        <hr />
         <form onSubmit={this.onSubmit}>
           <h2> Create Auction </h2>
           <div>
